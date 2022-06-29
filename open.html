@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+  </head>
+  <style>
+    #container1 {
+      height: 700px;
+      width: 100%;
+    }
+  </style>
+  <body>
+    <div id="container1">
+      <!-- <iframe src="" frameborder="0"></iframe> -->
+    </div>
+  </body>
+</html>
+<script>
+  let data = JSON.parse(localStorage.getItem("data"));
+
+  //console.log("data:", data);
+
+  let container1 = document.getElementById("container1");
+
+  let app = () => {
+    
+    let iframe = document.createElement("iframe");
+    iframe.src = `https://www.youtube.com/embed/${data[0]}`;
+    iframe.height = "90%";
+    iframe.width = "80%";
+   
+    iframe.allowFullscreen = "true";
+    container1.append(iframe);
+  };
+
+  app();
+</script>
